@@ -1,7 +1,10 @@
+import IssueCard from "./components/IssueCard/IssueCard";
+
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <IssueCard></IssueCard>
     </div>
   );
 }
