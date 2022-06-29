@@ -17,6 +17,8 @@ const IssueList = () => {
   }, []);
 
   const items = issues.map((item) => {
+    let date = new Date(item.created_at);
+    date = date.getDate();
     return (
       <div key={item.node_id} className={styles.issueItems}>
         <div className={styles.title}>
@@ -28,7 +30,21 @@ const IssueList = () => {
               <h4>{item.title}</h4>
             </div>
             <div>
-              <span>Status: Unconfirmed</span>
+              {item.labels.map((label) => {
+                return (
+                  <span
+                    style={{
+                      backgroundColor: `#${label.color}`,
+                      borderRadius: "10px",
+                      padding: "2px",
+                      margin:'2px'
+                    }}
+                    key={label.id}
+                  >
+                    {label.name}
+                  </span>
+                );
+              })}
             </div>
           </div>
 
@@ -37,15 +53,13 @@ const IssueList = () => {
           </div>
         </div>
         <div className={styles.description}>
-          <p>#{item.number} opened on 13 Apr by jbroomer</p>
+          <p>#{item.number} opened on {date} Jun by {item.user.login}</p>
         </div>
       </div>
     );
   });
 
-  return <div>
-    {items}
-  </div>;
+  return <div>{items}</div>;
 };
 
 export default IssueList;

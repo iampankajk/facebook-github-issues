@@ -112,3 +112,12 @@
     top: 2px;
     display: inline-block;
 }
+
+@media screen and (max-width:1024px){
+   .code{
+    display: block;
+   }
+   .nav{
+    height: 150px;
+   }
+}
