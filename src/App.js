@@ -1,10 +1,14 @@
+import Header from "./components/Header/Header";
 import IssueCard from "./components/IssueCard/IssueCard";
+import Search from "./components/Search/Search";
 
 
 function App() {
   return (
     <div>
-      <IssueCard></IssueCard>
+      <Header/>
+      <Search/>
+      <IssueCard/>
     </div>
   );
 }
