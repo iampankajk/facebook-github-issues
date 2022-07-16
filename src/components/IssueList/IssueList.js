@@ -16,6 +16,8 @@ const IssueList = () => {
     getIssue();
   }, []);
 
+  
+
   const items = issues.map((item) => {
     let date = new Date(item.created_at);
     date = date.getDate();

@@ -1,6 +1,6 @@
 .card{
     width: 80%;
     margin: auto;
-    height: 500px;
-    overflow: scroll;
+    /* height: 500px;
+    overflow: scroll; */
 }
